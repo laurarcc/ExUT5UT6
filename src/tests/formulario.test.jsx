@@ -27,7 +27,6 @@ describe('Formulario', () => {
         expect(header).toBeInTheDocument()
     })
 
-
     it('la imagen se encuentra en el documento', () => {
         expect(img).toBeInTheDocument()
     })
@@ -46,6 +45,7 @@ describe('Formulario', () => {
         await user.type(txtName, 'Laura');
         await user.type(txtAge, '21');
         await user.click(button);
-        expect(header).toBeInTheDocument(<h6></h6>)
+        const header6 = screen.getByRole('heading', {level:6});
+        expect(header6).toBeInTheDocument()
     })
 })
